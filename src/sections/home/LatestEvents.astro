@@ -23,7 +23,7 @@ const categories: Category[] = await fetchCategories()
     <RevealUp>
       <a href="/" class="aspect-[4/3] flex items-center p-8 bg-black overflow-hidden relative group rounded">
         <h2 class="relative z-20 font-inria text-3xl">{ category.name }</h2>
-        <Image width="410" height="302" loading="lazy" decoding="async" src={ category.image.url } alt={ category.name } class="absolute h-full w-full top-0 left-0 z-10 object-cover opacity-40 group-hover:scale-110 group-hover:opacity-20 transition-all duration-500" />
+        <Image width={ 410 } height={ 302 } src={ category.image.url } alt={ category.image.alt } class="absolute h-full w-full top-0 left-0 z-10 object-cover opacity-40 group-hover:scale-110 group-hover:opacity-20 transition-all duration-500" />
       </a>
     </RevealUp>
   ))}
