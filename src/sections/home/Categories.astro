@@ -1,0 +1,49 @@
+---
+import Background from "@/components/Background.astro"
+import Container from "@/components/Container.astro"
+import RevealUp from "@/components/RevealUp.astro"
+
+const categories = [
+  {
+    title: "Prosa",
+    src: "/images/prosa.png",
+    alt: "Prosa"
+  },
+  {
+    title: "Musica",
+    src: "/images/musica.png",
+    alt: "Musica"
+  },
+  {
+    title: "Danza",
+    src: "/images/danza.png",
+    alt: "Danza"
+  },
+  {
+    title: "Culture",
+    src: "/images/culture.png",
+    alt: "Culture"
+  },
+  {
+    title: "Comico",
+    src: "/images/comico.png",
+    alt: "Comico"
+  },
+  {
+    title: "Evento Ospitati",
+    src: "/images/evento-ospitati.png",
+    alt: "Evento Ospitati"
+  }
+]
+
+---
+<ul class="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-6">
+  { categories.map((category) => (
+    <RevealUp>
+      <a href="/" class="aspect-[4/3] flex items-center p-8 bg-black overflow-hidden relative group rounded">
+        <h2 class="relative z-20 font-inria text-3xl">{ category.title }</h2>
+        <img src={ category.src } alt={ category.alt } class="absolute h-full w-full top-0 left-0 z-10 object-cover opacity-40 group-hover:scale-110 group-hover:opacity-20 transition-all duration-500" />
+      </a>
+    </RevealUp>
+  ))}
+</ul>
